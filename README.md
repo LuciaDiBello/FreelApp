@@ -13,10 +13,12 @@ Sviluppare una piattaforma per freelance con le seguenti caratteristiche:
 - ottimizzare le entrate dei liberi professionisti ed aiutarli ad organizzare meglio il proprio lavoro
 
 # Diagramma ER
-L'utente deve poter
+L'utente deve poter:
 - creare il proprio profilo e fare login
 - inserire un database di clienti
 - inserire un suo profilo fiscale
-- creare un progetto associato a ciascun cliente
+- impostare una tariffa oraria
+- creare un progetto associato a ciascun cliente con data di creazione e data di fine
 - inserire delle task per ogni progetto da poter conteggiare
 - inserire delle task per ogni progetto già conteggiate
+- avere delle statistiche sul guadagno in base alle ore lavorate (task conlcuse) in relazione alla tariffa oraria
