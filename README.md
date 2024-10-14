@@ -50,8 +50,8 @@ L'utente deve poter:
 - P.iva
 - Ral
 - Aspettative che vuoi raggiungere
-	- tariffa oraria per raggiungere la tua RAl dei sogni
-	- tempo di lavoro.
+- tariffa oraria per raggiungere la tua RAl dei sogni
+- tempo di lavoro.
 
 ### Le funzionalità previste per la tua anagrafica:
 Aggiunta dei dati, modifica e cancellazione delle informazioni
@@ -61,9 +61,9 @@ Cancellazione.
 
 
 ## Anagrafica cliente:
--Nome Azienda
--P.iva
--Contatti
+- Nome Azienda
+- P.iva
+- Contatti
 
 ### Funzionalità previste per l'anagrafica cliente:
 L'anagrafica verrà creata con la possibilità di inserire i dati anagrafici di ogni singolo cliente.
@@ -73,8 +73,8 @@ Modifica e cancellazione.
 
 
 ## Il Contatore(per il calcolo della tariffa oraria):
--Calcola le ore di lavoro svolto.
--Calcola per le ore svolte e la tariffa oraria inseririta, il prezzo totale.
+-   Calcola le ore di lavoro svolto.
+-   Calcola per le ore svolte e la tariffa oraria inseririta, il prezzo totale.
 
 
 
@@ -85,21 +85,21 @@ avranno al loro interno una data di inizio e prevista chiusura.per la gestione d
 N.B Il Task sarà legato al progetto ogni progetto conterrà i suoi
 
 ### Funzionalità previste dei Task:
--Crea Task con: data Creazione; corpo del task; 
--Prevista chiusura;
--Modifica Task; 
--cancella Task; 
--Chiudi.
+- Crea Task con: data Creazione; corpo del task; 
+- Prevista chiusura;
+- Modifica Task; 
+- Cancella Task; 
+- Chiudi.
 
 ### I task prevedereanno uno stato:
-	-Creato; 
-	-In lavorazione; 
-	-Concluso;
-	-Filtraggio I task potranno essere visti tutti nella sezione dei Task aperti(filtraggio)-Task chiusi-task cancellati -ecc.
+- Creato; 
+- In lavorazione; 
+- Concluso;
+- Filtraggio I task potranno essere visti tutti nella sezione dei Task aperti(filtraggio)-Task chiusi-task cancellati -ecc.
 
 Ogni singolo stato avrà info su:
-    -Data di creazione: 
-    -Tempo stimato da dedicare al progetto; 
-    -Data di chiusura.
+- Data di creazione: 
+- Tempo stimato da dedicare al progetto; 
+- Data di chiusura.
 
 Sarà possibile avere la possibilità di aggiungere un task già conteggiato al lavoro, senza bisogno di avviare il contatore.(anche in stato chiuso)
