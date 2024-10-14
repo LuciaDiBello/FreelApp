@@ -78,7 +78,7 @@ Modifica e cancellazione.
 
 
 
-## Task:
+## I Task:
 Ogni progetto conterrà al suo interno uno, nessuno o piu' task, che conterranno le informazioni relative ad ogni singolo lavoro da svolgere,
 avranno al loro interno una data di inizio e prevista chiusura.per la gestione del tempo.
 
@@ -97,9 +97,9 @@ N.B Il Task sarà legato al progetto ogni progetto conterrà i suoi
 	-Concluso;
 	-Filtraggio I task potranno essere visti tutti nella sezione dei Task aperti(filtraggio)-Task chiusi-task cancellati -ecc.
 
-	ogni singolo stato avrà info su:
-		-Data di creazione: 
-		-Tempo stimato da dedicare al progetto; 
-		-Data di chiusura.
+Ogni singolo stato avrà info su:
+    -Data di creazione: 
+    -Tempo stimato da dedicare al progetto; 
+    -Data di chiusura.
 
 Sarà possibile avere la possibilità di aggiungere un task già conteggiato al lavoro, senza bisogno di avviare il contatore.(anche in stato chiuso)
