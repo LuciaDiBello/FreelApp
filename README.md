@@ -21,4 +21,4 @@ L'utente deve poter:
 - creare un progetto associato a ciascun cliente con data di creazione e data di fine
 - inserire delle task per ogni progetto da poter conteggiare
 - inserire delle task per ogni progetto già conteggiate
-- avere delle statistiche sul guadagno in base alle ore lavorate (task conlcuse) in relazione alla tariffa oraria
+- avere delle statistiche sul guadagno in base alle ore lavorate (task concluse) in relazione alla tariffa oraria
