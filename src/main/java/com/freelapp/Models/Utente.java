@@ -12,23 +12,23 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.NotBlank;
 
 @Entity
-@Table(name = "Clienti")
-public class Cliente {
+@Table(name = "Utenti")
+public class Utente {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(name = "NomeDitta", nullable = false)
+	@Column(name = "NomeUtente", nullable = false)
 	@NotNull(message = "Il nome non può essere null")
 	@NotBlank(message = "Il nome non può essere blank ")
 	private String name;
-
-	@Column(name = "RagioneSociale", nullable = false)
-	@NotNull(message = "La ragione sociale non può essere null")
-	@NotBlank(message = "La ragione sociale non può essere blank ")
-	private String ragioneSociale;
 	
+	@Column(name = "Cognome", nullable = false)
+	@NotNull(message = "Il nome non può essere null")
+	@NotBlank(message = "Il nome non può essere blank ")
+	private String cognome;
+
 	@Column(name = "email", nullable = false)
 	@NotNull(message = "L'email non può essere null")
 	@NotBlank(message = "L'email non può essere blank ")
@@ -39,20 +39,15 @@ public class Cliente {
 	@NotBlank(message = "Il telefono non può essere blank ")
 	private int telefono;
 	
-	@Column(name = "Indirizzo", nullable = false)
-	@NotNull(message = "L'indirizzo non può essere null")
-	@NotBlank(message = "L'indirizzo non può essere blank ")
-	private String indirizzo;
-	
-	@Column(name = "Città", nullable = false)
-	@NotNull(message = "La città non può essere null")
-	@NotBlank(message = "La città non può essere blank ")
-	private String città;
-	
 	@Column(name = "PartitaIva", nullable = false)
 	@NotNull(message = "La partitaIva non può essere null")
 	@NotBlank(message = "La partitaIva non può essere blank ")
 	private String partitaIva;
+	
+	@Column(name = "RAL", nullable = false)
+	@NotNull(message = "Il RAL non può essere null")
+	@NotBlank(message = "Il RAL non può essere blank ")
+	private int ral;
 	
 	@OneToMany(mappedBy = "cliente")
 	private List<Progetto> progetti;
@@ -72,13 +67,13 @@ public class Cliente {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public String getRagioneSociale() {
-		return ragioneSociale;
+	
+	public String getCognome() {
+		return cognome;
 	}
 
-	public void setRagioneSociale(String ragioneSociale) {
-		this.ragioneSociale = ragioneSociale;
+	public void setCognome(String cognome) {
+		this.name = cognome;
 	}
 
 	public String getEmail() {
@@ -97,22 +92,6 @@ public class Cliente {
 		this.telefono = telefono;
 	}
 
-	public String getIndirizzo() {
-		return indirizzo;
-	}
-
-	public void setIndirizzo(String indirizzo) {
-		this.indirizzo = indirizzo;
-	}
-
-	public String getCittà() {
-		return città;
-	}
-
-	public void setCittà(String città) {
-		this.città = città;
-	}
-
 	public String getPartitaIva() {
 		return partitaIva;
 	}
@@ -120,6 +99,15 @@ public class Cliente {
 	public void setPartitaIva(String partitaIva) {
 		this.partitaIva = partitaIva;
 	}
+	
+	public int getRal() {
+		return ral;
+	}
+
+	public void setRal(int ral) {
+		this.ral= ral;
+	}
+	
 
 	public List<Progetto> getProgetti() {
 		return progetti;
