@@ -1,4 +1,4 @@
-package it.provaTask.model;
+package com.freeIapp.model;
 
 import java.util.List;
 import jakarta.persistence.Entity;

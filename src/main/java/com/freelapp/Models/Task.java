@@ -1,4 +1,4 @@
-package it.provaTask.model;
+package com.freeIapp.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -78,7 +78,7 @@ public class Task{
 		return cronometro;
 	}
 
-	public void setCronometro(int telefono) {
+	public void setCronometro(int cronometro) {
 		this.cronometro = cronometro;
 	}
 	
