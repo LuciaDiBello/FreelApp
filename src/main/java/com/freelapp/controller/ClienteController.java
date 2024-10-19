@@ -13,8 +13,8 @@ import org.springframework.validation.BindingResult;
 
 import jakarta.validation.Valid;
 
-import it.provaTask.repository.ClienteRepository;
-import it.provaTask.model.Cliente;
+import com.freeIapp.repository.ClienteRepository;
+import com.freeIapp.model.Cliente;
 
 @Controller
 public class ClienteController {
