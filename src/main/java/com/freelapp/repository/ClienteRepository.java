@@ -1,4 +1,4 @@
-package it.provaTask.repository;
+package com.freeIapp.repository;
 
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
