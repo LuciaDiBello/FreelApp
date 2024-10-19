@@ -33,11 +33,15 @@ public class Task{
 	@Column(name = "DataChiusuraStimata", nullable = false)
 	private LocalDate dataChiusuraStimata;
 	
+	@NotNull(message = "La data di chiusura definitiva non può essere null")
+	@Column(name = "DataChiusuraDefinitiva", nullable = false)
+	private LocalDate dataChiusuraDefinitiva;
+
 	@Column(name = "Cronometro, nullable = false")
 	@NotNull(message = "Il cronometro non può essere null")
 	@NotBlank(message = "Il cronometro non può essere blank ")
 	private int cronometro;
-
+	
 	@ManyToOne
 	@JoinColumn(name = "ProgettoRif", nullable = false)
 	private Progetto progetto;
@@ -74,12 +78,28 @@ public class Task{
 		this.dataChiusuraStimata = dataChiusuraStimata;
 	}
 	
+	public LocalDate getDataChiusuraDefinitiva() {
+		return dataChiusuraStimata;
+	}
+
+	public void setDataChiusuraDefinitiva(LocalDate dataChiusuraStimata) {
+		this.dataChiusuraStimata = dataChiusuraStimata;
+	}
+
 	public int getCronometro() {
 		return cronometro;
 	}
 
 	public void setCronometro(int cronometro) {
 		this.cronometro = cronometro;
+	}
+	
+	public Progetto getProgetto() {
+		return progetto;
+	}
+
+	public void setProgetto(Progetto progetto) {
+		this.progetto = progetto;
 	}
 	
 }

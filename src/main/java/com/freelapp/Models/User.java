@@ -13,7 +13,7 @@ import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "Utenti")
-public class Utente {
+public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,8 +25,8 @@ public class Utente {
 	private String name;
 	
 	@Column(name = "Cognome", nullable = false)
-	@NotNull(message = "Il nome non può essere null")
-	@NotBlank(message = "Il nome non può essere blank ")
+	@NotNull(message = "Il cognome non può essere null")
+	@NotBlank(message = "Il cognome non può essere blank ")
 	private String cognome;
 
 	@Column(name = "email", nullable = false)
@@ -36,7 +36,6 @@ public class Utente {
 	
 	@Column(name = "Telefono", nullable = false)
 	@NotNull(message = "Il telefono non può essere null")
-	@NotBlank(message = "Il telefono non può essere blank ")
 	private int telefono;
 	
 	@Column(name = "PartitaIva", nullable = false)
@@ -46,10 +45,9 @@ public class Utente {
 	
 	@Column(name = "RAL", nullable = false)
 	@NotNull(message = "Il RAL non può essere null")
-	@NotBlank(message = "Il RAL non può essere blank ")
 	private int ral;
 	
-	@OneToMany(mappedBy = "cliente")
+	@OneToMany(mappedBy = "utente")
 	private List<Progetto> progetti;
 		
 	public int getId() {
@@ -73,7 +71,7 @@ public class Utente {
 	}
 
 	public void setCognome(String cognome) {
-		this.name = cognome;
+		this.cognome = cognome;
 	}
 
 	public String getEmail() {
@@ -116,6 +114,5 @@ public class Utente {
 	public void setProgetti(List<Progetto> progetti) {
 		this.progetti = progetti;
 	}
-
 }
 

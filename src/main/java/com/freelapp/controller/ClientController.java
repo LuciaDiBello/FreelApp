@@ -17,99 +17,98 @@ import com.freeIapp.repository.ClienteRepository;
 import com.freeIapp.model.Cliente;
 
 @Controller
-public class ClienteController {
+public class ClientController {
 
 	@Autowired
 	private ClienteRepository repositoryCliente;
 	
 	
-	 @GetMapping("/index")
+	 @GetMapping("/Clienti")
 	 public String listaClienti(Model model) {
 	
 		List<Cliente> listaClienti = repositoryCliente.findAll();
 		model.addAttribute("list", listaClienti);
-		return "index";
+		return "/Clienti/listClient";
 	}
 	 
 	 @GetMapping("/cliente-search")
 	 public String clienteByPartitaIva(Model model, @RequestParam(name = "partitaIva", required = false) String partitaIva) {
          
 		    if (partitaIva == null || partitaIva.isBlank()) {
-		          return "redirect:/index";
+		          return "redirect:/Clienti";
 		       }
 		    else { 
 		    	 
 		    	   List<Cliente> listaClienti = repositoryCliente.findByPartitaIva(partitaIva);
-		    	   
-		    	  
+
 		           if (listaClienti.isEmpty()) 
-		    			         return "redirect:/index";     
+		    			         return "redirect:/Clienti";     
 		           else  {  
 		        	   		model.addAttribute("list", listaClienti);
-			    	  		return "redirect:/index/" + listaClienti.get(0).getId(); 
+			    	  		return "redirect:/Clienti/" + listaClienti.get(0).getId(); 
 			                }   
 		          } 
 	  }	
 	
-	@GetMapping("/index/{id}")
+	@GetMapping("/Clienti/{id}")
 	public String descrizioneCliente(@PathVariable("id") int clienteId, Model model) {
 		
 		model.addAttribute("cliente", repositoryCliente.getReferenceById(clienteId));
 	
-		return "descrizioneCliente";
+		return "/Clienti/descrizioneCliente";
 	  }
 	
 	
-	@GetMapping("/index/insert")
+	@GetMapping("/Clienti/insert")
 	public String aggiungiCliente(Model model) {
 	    
 	    model.addAttribute("formCliente", new Cliente());
 	    
-	    return "insert"; 
+	    return "/Clienti/insertClient"; 
 	}
 	
 	
-	@PostMapping("/index/insert")
+	@PostMapping("/Clienti/insert")
 	public String storeCliente(@Valid @ModelAttribute("formCliente") Cliente formCliente, BindingResult bindingResult, Model model){
 		
 	   if(bindingResult.hasErrors()) {
-	      return "insert";
+	      return "/Clienti/insertClient";
 	   }
 
 	   repositoryCliente.save(formCliente);
 	  
 
-	   return "redirect:/index";
+	   return "redirect:/Clienti";
 	}
 	
-	@GetMapping("/index/edit/{id}")
+	@GetMapping("/Clienti/edit/{id}")
 	public String edit(@PathVariable("id") Integer id, Model model) {
 				
 		model.addAttribute("formCliente", repositoryCliente.findById(id).get());
 		
-		return "edit";
+		return "/Clienti/editClient";
 	}
 	
 	
-	@PostMapping("/index/edit/{id}")
+	@PostMapping("/Clienti/edit/{id}")
 	public String updateCliente (@Valid @ModelAttribute("formCliente") Cliente formCliente, BindingResult bindingResult, Model model) {
 		
 		if(bindingResult.hasErrors()) {
-			return "edit";
+			return "/Clienti/editClient";
 		}
 		
 		repositoryCliente.save(formCliente);
 		
-		return "redirect:/index";
+		return "redirect:/Clienti";
 	}
 	
 	
-	@PostMapping("/index/delete/{id}")
+	@PostMapping("/Clienti/delete/{id}")
 	public String deleteClienti(@PathVariable("id") Integer id) {
 		
 		repositoryCliente.deleteById(id);
 		
-		return "redirect:/index";
+		return "redirect:/Clienti";
 	  }
 }
 	

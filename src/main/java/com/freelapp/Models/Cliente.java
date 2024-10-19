@@ -13,7 +13,7 @@ import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "Clienti")
-public class Cliente { 
+public class Cliente {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,7 +36,6 @@ public class Cliente {
 	
 	@Column(name = "Telefono", nullable = false)
 	@NotNull(message = "Il telefono non può essere null")
-	@NotBlank(message = "Il telefono non può essere blank ")
 	private int telefono;
 	
 	@Column(name = "Indirizzo", nullable = false)
@@ -128,6 +127,5 @@ public class Cliente {
 	public void setProgetti(List<Progetto> progetti) {
 		this.progetti = progetti;
 	}
-
 }
 

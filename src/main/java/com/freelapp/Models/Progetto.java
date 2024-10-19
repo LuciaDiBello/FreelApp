@@ -36,7 +36,7 @@ public class Progetto {
 	private LocalDate dataFine;
 	
 	@OneToMany(mappedBy = "progetto")
-	private List<Task> task;
+	private List<Task> elencoTask;
 
 	@ManyToOne
 	@JoinColumn(name = "ClienteRif", nullable = false)
@@ -44,7 +44,7 @@ public class Progetto {
 	
 	@ManyToOne
 	@JoinColumn(name = "UtenteRif", nullable = false)
-	private Utente utente;
+	private User utente;
 	
 	public int getId() {
 		return id;
@@ -52,6 +52,14 @@ public class Progetto {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public LocalDate getDataInizio() {
@@ -78,6 +86,21 @@ public class Progetto {
 		this.cliente = cliente;
 	}
 	
+	public User getUtente() {
+		return utente;
+	}
+	
+	public void setUtente(User utente) {
+		this.utente = utente;
+	}
+	
+	public List<Task> getElencoTask() {
+		return elencoTask;
+	}
+
+	public void setElencoTask(List<Task> elencoTask) {
+		this.elencoTask = elencoTask;
+	}
 }
 
 

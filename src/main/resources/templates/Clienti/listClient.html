@@ -62,17 +62,17 @@
 				<td>  
 					<a th:fragment="button(link)"
 					   class="btn btn-primary"
-					   th:href="@{/index/{id}(id=${cliente.getId()})}">
+					   th:href="@{/Clienti/{id}(id=${cliente.getId()})}">
 					   <i class="bi bi-file-earmark-text w-5"></i>
 					</a>
 					<a th:fragment="button(link)"
 						class="btn btn-primary"
-						th:href="@{/index/edit/{id}(id=${cliente.getId()})}">
+						th:href="@{/Clienti/edit/{id}(id=${cliente.getId()})}">
 						<i class="bi bi-pencil-square"></i>
 				    </a>
 				</td>
 				<td>
-					<form th:action="@{'/index/delete/{id}'(id=${cliente.getId()})}" method="post">
+					<form th:action="@{'/Clienti/delete/{id}'(id=${cliente.getId()})}" method="post">
 						<button class="btn btn-danger" type="submit" id="submitButton" th:data-confirm-delete="|Sei sicuro di voler cancellare il cliente?|
 						"onclick="if(!confirm(this.getAttribute('data-confirm-delete'))) return false">
 							<i class="bi bi-trash"></i>
@@ -91,7 +91,7 @@
 </div>
 
 <div class="text-center mt-5 mb-5">
-   <a th:fragment="button(link)" class="btn btn-success" th:href="@{/index/insert}"> Inserisci un nuovo cliente </a>
+   <a th:fragment="button(link)" class="btn btn-success" th:href="@{/Clienti/insert}"> Inserisci un nuovo cliente </a>
 </div>
 
 <div class="container mt-5">

@@ -36,7 +36,7 @@
 	</div>
 		
 	<div class="container">
-		<form class="mx-auto w-50" id="formCliente" th:object="${formCliente}" th:action="@{/index/edit/{id}(id=${formCliente.getId()})}" method="post">
+		<form class="mx-auto w-50" id="formCliente" th:object="${formCliente}" th:action="@{/Clienti/edit/{id}(id=${formCliente.getId()})}" method="post">
 			<div class="form-group mb-2" >
 			  <label for="name">Nome del cliente</label>
 			  <input type="text" class="form-control" id="name" th:field="*{name}" th:errorClass="is-invalid">
@@ -78,7 +78,7 @@
 			 </div>
 			 			 
 			 <div class="form-group mb-2">			  
-			 	<label for="indirizzo">Città:</label>
+			 	<label for="città">Città:</label>
 			 	<input type="text" class="form-control" id="città" th:field="*{città}" th:errorClass="is-invalid">
 			 		<div th:if="${#fields.hasErrors('città')}" class="invalid-feedback">
 			 			 <ul>
@@ -98,7 +98,7 @@
 			 	</div>		
 			 			 
 			 	<div class="form-group mb-2">			  
-			 		<label for="ragioneSociale">Partita Iva:</label>
+			 		<label for="PartitaIva">Partita Iva:</label>
 			 		<input type="text" class="form-control" id="PartitaIva" th:field="*{partitaIva}" th:errorClass="is-invalid">
 			 			 <div th:if="${#fields.hasErrors('partitaIva')}" class="invalid-feedback">
 			 			 	<ul>
@@ -112,7 +112,7 @@
 	   </div>		
 	
 	<div class="text-center mt-5">
-		<a class="btn btn-primary" th:href="@{/index}"> Torna alla home page </a>
+		<a class="btn btn-primary" th:href="@{/Clienti}"> Torna alla lista dei clienti </a>
 	</div>
 	
 	<script th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.bundle.min.js}"></script>
