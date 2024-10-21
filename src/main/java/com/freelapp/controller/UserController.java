@@ -29,6 +29,13 @@ public class UserController {
 		return "/Admin/descrizioneUser";
 	  }
 	
+	@GetMapping("/Admin/AllClient/{id}")
+	public String allClient(@PathVariable("id") int userId, Model model) {
+		
+		model.addAttribute("user", repositoryUser.getReferenceById(userId));
+	
+		return "/Admin/allClient";
+	  }
 	
 	@GetMapping("Admin/insert")
 	public String aggiungiUtente(Model model) {
@@ -45,7 +52,7 @@ public class UserController {
 	   if(bindingResult.hasErrors()) {
 	      return "/Admin/insertUser";
 	   }
-
+	   
 	   repositoryUser.save(formUser);
 	  
 	   return "redirect:/Admin/" + formUser.getId();
@@ -75,4 +82,3 @@ public class UserController {
 
 }
 	
-

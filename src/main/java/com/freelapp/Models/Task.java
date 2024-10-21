@@ -39,7 +39,6 @@ public class Task{
 
 	@Column(name = "Cronometro, nullable = false")
 	@NotNull(message = "Il cronometro non può essere null")
-	@NotBlank(message = "Il cronometro non può essere blank ")
 	private int cronometro;
 	
 	@ManyToOne

@@ -56,12 +56,72 @@
 						<div class="text-center">
 							<a class="btn btn-primary mb-2" th:href="@{/Admin/edit/{id}(id=${user.getId()})}"> Modifica i tuoi dati </a>
 						</div>
-						
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	
+	<div class="text-center mt-5">
+	 <h2>Elenco dei progetti</h2>
+	</div>	
+	
+	<div th:unless="${user.Progetti.isEmpty()}">
+	<table class="table table-striped mt-5 mx-auto" style="width: 50rem;">
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>DataInizio</th>
+				<th>DataFine</th>
+				<th>Cliente</th>
+				<th>PagCliente</th>
+				<th>ModProg</th>
+				<th>CancProg</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="progetto: ${user.progetti}">
+				<td th:text="${progetto.getName()}"></td>
+				<td th:text="${progetto.getDataInizio()}"></td>
+				<td th:text="${progetto.getDataFine()}"></td>
+				<td th:text="${progetto.getCliente().getName()}"></td>	
+				<td><a th:fragment="button(link)"
+					class="btn btn-primary"
+					th:href="@{/Clienti/{id}(id=${progetto.getCliente.getId()})}">
+					<i class="bi bi-file-earmark-text w-5"></i>
+			        </a>
+				</td>
+				<td> 
+					 <a th:href="@{|/Progetti/edit/${progetto.id}|}" class="btn btn-primary"> 
+					    <i class="bi bi-pencil-square"></i>
+				     </a> 
+				 </td>
+				 <td>
+				 <form th:action="@{'/Progetti/delete/{id}'(id=${progetto.getId()})}" method="post">
+				 	<button class="btn btn-danger" type="submit" id="submitButton" th:data-confirm-delete="|Sei sicuro di voler cancellare il progetto?|
+				 	  "onclick="if(!confirm(this.getAttribute('data-confirm-delete'))) return false">
+				 	   <i class="bi bi-trash"></i>
+				 	</button>
+				 </form>
+				 </td>	
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	
+	 <div th:if="${user.progetti.isEmpty()}" class="text-center mt-5">
+		<h5>'Non ci sono progetti'</h5>
+	 </div>
+	
+	<div class="text-center mt-5">
+	    <a th:href="@{/Progetti/insert/{id}(id=${user.id})}" class="btn btn-primary">Crea un nuovo progetto</a>	
+	</div>
+	
+	<div class="text-center mt-5">
+	    <a th:href="@{/Admin/AllClient/{id}(id=${user.id})}" class="btn btn-primary">Vai all'elenco dei tuoi clienti</a>	
+	</div>
+	
+	
 		
 	<script th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.bundle.min.js}"></script>
 
