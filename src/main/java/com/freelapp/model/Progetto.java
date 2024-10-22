@@ -1,4 +1,4 @@
-package com.freeIapp.model;
+package com.freelapp.model;
 
 import java.util.List;
 import jakarta.persistence.Entity;

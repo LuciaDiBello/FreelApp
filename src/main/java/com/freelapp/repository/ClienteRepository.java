@@ -1,8 +1,10 @@
-package com.freeIapp.repository;
+package com.freelapp.repository;
 
 import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.freeIapp.model.Cliente;
+
+import com.freelapp.model.Cliente;
 
 public interface ClienteRepository extends JpaRepository<Cliente, Integer>{
 	

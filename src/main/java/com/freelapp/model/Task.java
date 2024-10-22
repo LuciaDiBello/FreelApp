@@ -1,4 +1,4 @@
-package com.freeIapp.model;
+package com.freelapp.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;

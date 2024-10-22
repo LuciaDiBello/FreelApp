@@ -1,18 +1,18 @@
-package com.freeIapp.controller;
+package com.freelapp.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.validation.BindingResult;
-import jakarta.validation.Valid;
 
-import com.freeIapp.repository.UserRepository;
-import com.freeIapp.model.User;
+import com.freelapp.model.User;
+import com.freelapp.repository.UserRepository;
+
+import jakarta.validation.Valid;
 
 @Controller
 public class UserController {

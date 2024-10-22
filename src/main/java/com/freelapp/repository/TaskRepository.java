@@ -1,7 +1,8 @@
-package com.freeIapp.repository;
+package com.freelapp.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.freeIapp.model.Task;
+
+import com.freelapp.model.Task;
 
 public interface TaskRepository extends JpaRepository<Task, Integer> {
 

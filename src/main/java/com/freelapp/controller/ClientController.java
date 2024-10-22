@@ -1,20 +1,21 @@
-package com.freeIapp.controller;
+package com.freelapp.controller;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.freelapp.model.Cliente;
+import com.freelapp.repository.ClienteRepository;
 
 import jakarta.validation.Valid;
-
-import com.freeIapp.repository.ClienteRepository;
-import com.freeIapp.model.Cliente;
 
 @Controller
 public class ClientController {
