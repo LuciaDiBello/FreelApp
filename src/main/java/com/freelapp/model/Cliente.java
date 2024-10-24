@@ -36,7 +36,7 @@ public class Cliente {
 	
 	@Column(name = "Telefono", nullable = false)
 	@NotNull(message = "Il telefono non può essere null")
-	private int telefono;
+	private String telefono;
 	
 	@Column(name = "Indirizzo", nullable = false)
 	@NotNull(message = "L'indirizzo non può essere null")
@@ -88,11 +88,11 @@ public class Cliente {
 		this.email = email;
 	}
 
-	public int getTelefono() {
+	public String getTelefono() {
 		return telefono;
 	}
 
-	public void setTelefono(int telefono) {
+	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
 

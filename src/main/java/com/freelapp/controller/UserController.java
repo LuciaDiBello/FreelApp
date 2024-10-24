@@ -21,63 +21,63 @@ public class UserController {
 	private UserRepository repositoryUser;
 	
 	
-	@GetMapping("/Admin/{id}")
+	@GetMapping("/User/{id}")
 	public String descrizioneAdmin(@PathVariable("id") int userId, Model model) {
 		
 		model.addAttribute("user", repositoryUser.getReferenceById(userId));
 	
-		return "/Admin/descrizioneUser";
+		return "/User/descrizioneUser";
 	  }
 	
-	@GetMapping("/Admin/AllClient/{id}")
+	@GetMapping("/User/AllClient/{id}")
 	public String allClient(@PathVariable("id") int userId, Model model) {
 		
 		model.addAttribute("user", repositoryUser.getReferenceById(userId));
 	
-		return "/Admin/allClient";
+		return "/User/allClient";
 	  }
 	
-	@GetMapping("Admin/insert")
+	@GetMapping("User/insert")
 	public String aggiungiUtente(Model model) {
 	    
 	    model.addAttribute("formUser", new User());
 	    
-	    return "/Admin/insertUser"; 
+	    return "/User/insertUser"; 
 	}
 	
 	
-	@PostMapping("/Admin/insert")
+	@PostMapping("/User/insert")
 	public String storeUser(@Valid @ModelAttribute("formUser") User formUser, BindingResult bindingResult, Model model){
 		
 	   if(bindingResult.hasErrors()) {
-	      return "/Admin/insertUser";
+	      return "/User/insertUser";
 	   }
 	   
 	   repositoryUser.save(formUser);
 	  
-	   return "redirect:/Admin/" + formUser.getId();
+	   return "redirect:/User/" + formUser.getId();
 
 	}
 	
-	@GetMapping("/Admin/edit/{id}")
+	@GetMapping("/User/edit/{id}")
 	public String edit(@PathVariable("id") Integer id, Model model) {
 				
 		model.addAttribute("formUser", repositoryUser.findById(id).get());
 		
-		return "/Admin/editUser";
+		return "/User/editUser";
 	}
 	
 	
-	@PostMapping("/Admin/edit/{id}")
+	@PostMapping("/User/edit/{id}")
 	public String updateUser (@Valid @ModelAttribute("formUser") User formUser, BindingResult bindingResult, Model model) {
 		
 		if(bindingResult.hasErrors()) {
-			return "/Admin/editUser";
+			return "/User/editUser";
 		}
 		
 		repositoryUser.save(formUser);
 		
-		return "redirect:/Admin/" + formUser.getId();
+		return "redirect:/User/" + formUser.getId();
 	}
 
 }

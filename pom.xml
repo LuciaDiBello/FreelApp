@@ -8,10 +8,10 @@
 		<version>3.3.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.freeIapp</groupId>
-	<artifactId>freeIapp</artifactId>
+	<groupId>com.freelapp</groupId>
+	<artifactId>freelapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>freeIapp</name>
+	<name>freelapp</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
