@@ -76,6 +76,14 @@ public class Contatore {
     public void setTask(Task task) {
         this.task = task;
     }
+
+    public int getStop_numbers() {
+        return stop_numbers;
+    }
+
+    public void setStop_numbers(int stop_numbers) {
+        this.stop_numbers = stop_numbers;
+    }
     
 
     
