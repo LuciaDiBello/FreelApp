@@ -84,9 +84,5 @@ public class Contatore {
     public void setStop_numbers(int stop_numbers) {
         this.stop_numbers = stop_numbers;
     }
-    
-
-    
-    
 	
 }
