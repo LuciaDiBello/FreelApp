@@ -1,19 +1,22 @@
 package com.freelapp.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import java.time.LocalDate;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
-import jakarta.persistence.Id;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.validation.constraints.NotNull;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
-import java.time.LocalDate; 
+import jakarta.validation.constraints.NotNull; 
 
 @Entity
-@Table(name = "Tasks")
+@Table(name = "tasks")
 public class Task{
 
 	@Id
@@ -21,7 +24,7 @@ public class Task{
 	private int id;
 	
 	@Column(name = "Descrizione", nullable = false)
- 	@NotBlank(message = "La descrizione del progetto non può essere null")
+ 	@NotBlank(message = "La descrizione del progetto non può essere blank")
 	@NotNull(message = "La descrizione del progetto non può essere null")
 	private String descrizione;
 	
@@ -37,14 +40,26 @@ public class Task{
 	@Column(name = "DataChiusuraDefinitiva", nullable = false)
 	private LocalDate dataChiusuraDefinitiva;
 
-	@Column(name = "Cronometro, nullable = false")
-	@NotNull(message = "Il cronometro non può essere null")
-	private int cronometro;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	    @JoinColumn(name = "contatore_id", referencedColumnName = "id")
+	    private Contatore contatore;
+
 	
 	@ManyToOne
 	@JoinColumn(name = "ProgettoRif", nullable = false)
 	private Progetto progetto;
 	
+	
+	
+	public Contatore getContatore() {
+	    return contatore;
+	}
+
+	public void setContatore(Contatore contatore) {
+	    this.contatore = contatore;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -85,13 +100,7 @@ public class Task{
 		this.dataChiusuraStimata = dataChiusuraStimata;
 	}
 
-	public int getCronometro() {
-		return cronometro;
-	}
-
-	public void setCronometro(int cronometro) {
-		this.cronometro = cronometro;
-	}
+	
 	
 	public Progetto getProgetto() {
 		return progetto;
